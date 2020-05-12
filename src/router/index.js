@@ -1,24 +1,37 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import StaffList from '../views/StaffList.vue'
+import StaffMemberDetails from '@/components/staff-member-details.vue'
+import EditStaffMember from '@/components/edit-staff-member.vue'
+import EmptyStaffMember from '@/components/empty-staff-member'
 
 Vue.use(VueRouter)
 
   const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+    name: 'StaffList',
+    component: StaffList,
+
+    children : [
+        {
+          path: '/staffmember/:id',
+          name: 'StaffMember',
+          component: StaffMemberDetails
+        },
+        {
+          path: '/staffMember/',
+          name: 'StafMemerNoName',
+          component: EmptyStaffMember
+        },
+        {
+          path: '/staffmember/:id/edit',
+          name: 'EditStaffMember',
+          component: EditStaffMember
+        }
+    ]
+  
+  }]
 
 const router = new VueRouter({
   mode: 'history',

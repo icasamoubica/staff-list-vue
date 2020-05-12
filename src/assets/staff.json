@@ -1,0 +1,16 @@
+{"staffList" : [
+    {
+    "id" : 1,
+    "fullName" : "John Doe",
+    "title" : "CEO",
+    "cellPhone" : "+46 72 59 63 435",
+    "eMail" : "john.doe@company.se"
+    },
+    {
+    "id" : 2,
+    "fullName" : "Jane Doe",
+    "title" : "Owner",
+    "cellPhone" : "+46 72 44 06 111",
+    "eMail" : "jane.doe@company.se"
+    }
+]}
