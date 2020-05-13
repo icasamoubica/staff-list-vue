@@ -1,5 +1,5 @@
 <template>
-    <p>No staff memer selected</p>
+    <h3>Details</h3>
 </template>
 
 <script>

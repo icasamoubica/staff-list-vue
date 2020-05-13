@@ -4,6 +4,7 @@ import StaffList from '../views/StaffList.vue'
 import StaffMemberDetails from '@/components/staff-member-details.vue'
 import EditStaffMember from '@/components/edit-staff-member.vue'
 import EmptyStaffMember from '@/components/empty-staff-member'
+import AddNewMember from '@/components/create-member.vue'
 
 Vue.use(VueRouter)
 
@@ -28,6 +29,11 @@ Vue.use(VueRouter)
           path: '/staffmember/:id/edit',
           name: 'EditStaffMember',
           component: EditStaffMember
+        },
+        {
+          path: '/addStaff/',
+          name: 'AddNewStaffMember',
+          component: AddNewMember
         }
     ]
   
