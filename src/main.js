@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-// import staff from '@/assets/staff.json'
+import staffMock from '@/assets/staff.json'
 
 Vue.config.productionTip = false
 
@@ -9,7 +9,7 @@ Vue.config.productionTip = false
 
 new Vue({
   data(){ return {
-      staff: [Object]
+      staff: staffMock.staffList
   }},
 
   methods:{
@@ -35,16 +35,27 @@ new Vue({
 
     deleteMember(id) {
       console.log("deleting member with id " + id);
-      let index = 0
-      let indexToDelete = -1
-      for (let person of this.staff) {
-          if (person.id === id) {
-            indexToDelete = index
-          }
-      }
-      if (indexToDelete>-1) {
-        this.staff.splice(indexToDelete,1)
-      }
+      
+      this.staff = this.staff.filter(member => member.id != id)
+
+      // let index = 0
+      // let indexToDelete = -1
+      // for (let person of this.staff) {
+
+      //     console.log(person.id);
+          
+      //     if (person.id == id) {
+      //       console.log("found id " + person.id);
+            
+      //       indexToDelete = index
+      //     }
+      //     index++
+      // }
+      // if (indexToDelete>-1) {
+      //   this.staff = this.staff.splice(indexToDelete,1)
+      // }
+      console.log(this.staff);
+      
     }
   },
 

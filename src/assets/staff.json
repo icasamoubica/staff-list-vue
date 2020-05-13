@@ -1,16 +1,62 @@
-{"staffList" : [
-    {
-    "id" : 1,
-    "fullName" : "John Doe",
-    "title" : "CEO",
-    "cellPhone" : "+46 72 59 63 435",
-    "eMail" : "john.doe@company.se"
-    },
-    {
-    "id" : 2,
-    "fullName" : "Jane Doe",
-    "title" : "Owner",
-    "cellPhone" : "+46 72 44 06 111",
-    "eMail" : "jane.doe@company.se"
-    }
-]}
+{"staffList" : [{
+  "id": 1,
+  "fullName": "Antonin Hacket",
+  "title": "Project Manager",
+  "cellPhone": "723-495-5466",
+  "eMail": "ahacket0@free.fr"
+}, {
+  "id": 2,
+  "fullName": "Siffre Monaghan",
+  "title": "Analog Circuit Design manager",
+  "cellPhone": "780-656-1708",
+  "eMail": "smonaghan1@cpanel.net"
+}, {
+  "id": 3,
+  "fullName": "Guilbert Mirrlees",
+  "title": "Senior Editor",
+  "cellPhone": "605-163-9849",
+  "eMail": "gmirrlees2@seesaa.net"
+}, {
+  "id": 4,
+  "fullName": "Martynne Autin",
+  "title": "Administrative Officer",
+  "cellPhone": "971-422-6234",
+  "eMail": "mautin3@tmall.com"
+}, {
+  "id": 5,
+  "fullName": "Skelly Hakey",
+  "title": "Staff Scientist",
+  "cellPhone": "151-364-1410",
+  "eMail": "shakey4@narod.ru"
+}, {
+  "id": 6,
+  "fullName": "Shelby Asplin",
+  "title": "Safety Technician I",
+  "cellPhone": "892-681-0332",
+  "eMail": "sasplin5@army.mil"
+}, {
+  "id": 7,
+  "fullName": "Huey Partener",
+  "title": "Media Manager III",
+  "cellPhone": "383-351-9599",
+  "eMail": "hpartener6@shareasale.com"
+}, {
+  "id": 8,
+  "fullName": "Maris Mayall",
+  "title": "Senior Editor",
+  "cellPhone": "581-116-0988",
+  "eMail": "mmayall7@hud.gov"
+}, {
+  "id": 9,
+  "fullName": "Lisabeth Duffil",
+  "title": "Staff Scientist",
+  "cellPhone": "500-812-2264",
+  "eMail": "lduffil8@comcast.net"
+}, {
+  "id": 10,
+  "fullName": "Delano Bubeer",
+  "title": "Operator",
+  "cellPhone": "517-326-4253",
+  "eMail": "dbubeer9@alibaba.com"
+}]
+}

@@ -36,6 +36,7 @@ export default {
 }
 
 a:link {
+  color: black;
   text-decoration: none;
   font-size: 1.3rem;
   padding: 0.5rem;
