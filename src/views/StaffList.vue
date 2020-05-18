@@ -12,17 +12,26 @@
         </router-link>
     </div>
     <router-view></router-view>
+    <cookie-consent/>
   </div>
 </template>
 
 <script>
 
+import cookieConsent from '@/components/cookie-consent'
+
 export default {
+
   computed: {
     staff(){
       return this.$root.staff
     }
+  },
+
+  components: {
+      'cookie-consent': cookieConsent
   }
+
 }
 </script>
 
