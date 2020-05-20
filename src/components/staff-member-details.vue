@@ -1,5 +1,8 @@
 <template>
     <div class="staffMemberDetails">
+        <confirm-delete v-if="deleteBoxShow"
+                        v-on:deleteButtonPressed="deleteMember"
+                        v-on:dontDeleteButtonPressed="dontDelete"/>
         <h3 class="titleHeader">Details</h3>
         <div class="photo">
             <svg xmlns="http://www.w3.org/2000/svg" width="100px" height="100px" viewBox="0 0 24 24"><path d="M19 7.001c0 3.865-3.134 7-7 7s-7-3.135-7-7c0-3.867 3.134-7.001 7-7.001s7 3.134 7 7.001zm-1.598 7.18c-1.506 1.137-3.374 1.82-5.402 1.82-2.03 0-3.899-.685-5.407-1.822-4.072 1.793-6.593 7.376-6.593 9.821h24c0-2.423-2.6-8.006-6.598-9.819z"/></svg>
@@ -13,25 +16,41 @@
         <p class="title">{{person.title}}</p>
         <p>Phone: {{person.cellPhone}}</p>
         <p>E-mail: {{person.eMail}}</p>
-        <router-link v-bind:to="'/'">
-            <button v-on:click="deleteMember">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 6v18h18v-18h-18zm5 14c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4-18v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.73 2 1.631 2h5.712z"/></svg>
-            </button>
-        </router-link>
+        <button v-on:click="activateConfirmDelete">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 6v18h18v-18h-18zm5 14c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4-18v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.73 2 1.631 2h5.712z"/></svg>
+        </button>
     </div>
 </template>
 
 <script>
+
+import ConfirmDelete from '@/components/confirm-delete'
+
 export default {
+    data() {return{
+        deleteBoxShow : false
+    }},
+
+    components : {
+        ConfirmDelete
+    },
 
     computed: {
         person() {
-            return this.$root.getStaffMember( this.$route.params.id )
+            return this.$store.state.staffList.find(member => member.id == this.$route.params.id)
         }
     },
+
     methods: {
+        activateConfirmDelete() {
+            this.deleteBoxShow = true
+        },
         deleteMember() {
-            this.$root.deleteMember( this.$route.params.id )
+            this.$store.commit('deleteMember', this.$route.params.id )
+            this.$router.push('/staffMember')
+        },
+        dontDelete() {
+            this.deleteBoxShow = false
         }
     }
 }

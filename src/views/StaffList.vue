@@ -22,14 +22,17 @@ import cookieConsent from '@/components/cookie-consent'
 
 export default {
 
-  computed: {
-    staff(){
-      return this.$root.staff
-    }
-  },
-
   components: {
       'cookie-consent': cookieConsent
+  },
+
+  computed : {
+    staff(){
+      return this.$store.state.staffList
+    }
+  },
+  created() {
+    this.$store.dispatch('loadData')
   }
 
 }

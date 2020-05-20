@@ -23,26 +23,12 @@
 <script>
 export default {
     data(){return {
-        person: {
-            "id" : this.$root.getStaffMember( this.$route.params.id ).id,
-            "fullName" : this.$root.getStaffMember( this.$route.params.id ).fullName,
-            "title" : this.$root.getStaffMember( this.$route.params.id ).title,
-            "cellPhone" : this.$root.getStaffMember( this.$route.params.id ).cellPhone,
-            "eMail" : this.$root.getStaffMember( this.$route.params.id ).eMail
-        }
+        person: this.$store.state.staffList.find(member => member.id == this.$route.params.id)
     }},
-
-    computed: {
-        getStaffMember() {
-            return this.$root.getStaffMember( this.$route.params.id )
-        }
-    },
 
     methods: {
         saveData() {
-            console.log("saving");
-            
-            this.$root.savePerson(this.person)
+            this.$store.commit('editStaffMember' ,this.person)
         }
     }
 }

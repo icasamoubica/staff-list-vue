@@ -16,7 +16,7 @@
             <input type="text" v-model="person.eMail" id="eMail" name="eMail"><br>
         </form>
 
-        <router-link v-bind:to="'/staffmember/' + person.id">
+        <router-link v-bind:to="'/staffmember'">
             <button v-on:click="saveData">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
             </button>
@@ -28,7 +28,6 @@
 export default {
     data(){return {
         person: {
-            "id" : this.randomId(),
             "fullName" : "",
             "title" : "",
             "cellPhone" : "",
@@ -38,14 +37,7 @@ export default {
 
     methods: {
         saveData() {
-            console.log("adding...");
-            console.log(this.person);
-            
-            this.$root.addPerson(this.person)
-        },
-        randomId() {
-            let a = Math.floor(Math.random() * Math.floor(1000));
-            return a;
+            this.$store.commit('addStaffMember' ,this.person)
         }
     }
 }

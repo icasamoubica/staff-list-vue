@@ -1,7 +1,7 @@
 <template>
     <div class="cookieConsentContainer" v-if="noCookie">
         <h3>Consent to Cookie!</h3>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe, at officia tempora neque explicabo temporibus laborum atque eligendi sit veritatis dignissimos quo deserunt, sequi eius. Cupiditate beatae est fugiat quo.</p>
+        <p>Lorem ipsum cookie sit, amet consectetur adipisicing cookie. Saepe, at officia tempora neque explicabo temporibus laborum atque eligendi sit veritatis dignissimos quo deserunt, sequi eius. Cupiditate beatae est fugiat quo.</p>
         <button class="consentToCookie" v-on:click="iConsentToCookie">I consent</button>
     </div>
 </template>
